@@ -12,13 +12,16 @@ function addTodo(text) {
 }  
 function add(){
     var x=document.getElementById("todo").value+"\n";
-    todoItems.text=x;
-    todoItems.push(x);
-
-    document.getElementById("list").innerHTML   =todoItems;
+    addTodo(x);
+    // todoItems.push(x);
+    document.getElementById("list").innerHTML=""
+    todoItems.forEach(addNew);
 
 }
+function addNew(value){
+  document.getElementById("list").innerHTML  += "<br>"+value['text'];
 
+}
 
   
    
