@@ -19,9 +19,10 @@ function add(){
 
 }
 function addNew(value){
-  document.getElementById("list").innerHTML  += "<br>"+value['text'];
+  document.getElementById("list").innerHTML  +="<br><hr>"+value['text']+' <input type="checkbox" id="check">';
 
 }
+
 
   
    

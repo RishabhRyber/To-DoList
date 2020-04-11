@@ -1,0 +1,29 @@
+#submititem{
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    font-size: 20px;
+  padding: 20px;
+  background-color: plum;
+}
+#submititem:hover{
+    background-color: blueviolet;
+    color: white;
+}
+#todo{
+    border-color: black;
+    border-width: 9px;
+    border-radius: 15px;
+    block-size: 40px;
+    outline-width: 40px;
+    margin-left:500px;
+}
+
+h1{
+    color: midnightblue;
+    align-self: center;
+    margin-left:550px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-image: linear-gradient(to right,blueviolet,white,blueviolet);
+}
