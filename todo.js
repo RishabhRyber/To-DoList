@@ -54,9 +54,10 @@ function submitl(){
     }
     //document.getElementsByID("button").style.color='plum';
     s=" ";
-    perm_storage.push(perm); 
-    //localStorage.clear();
     todoItems=[];
+    perm_storage.push(perm); 
+    localStorage.clear();
+    
    
     
 }
