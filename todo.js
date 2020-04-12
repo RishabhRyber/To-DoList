@@ -62,15 +62,20 @@ function submitl(){
     
 }
 function check(){
-    if(perm_storage.length===0)
+    if(perm_storage.length===0){
     document.getElementById("list").innerHTML='<h3 align="center">No lists are added here</h3>';
+    }
     else{
        
         let j=0;
-        document.getElementById("list").innerHTML="<h1>List "+(j+1)+"</h1>";
+        
+        while(j<perm_storage.length){
+            document.getElementById("list").innerHTML="<h1>List "+(j+1)+"</h1>";
         for (var i = 0; i < perm_storage[j].length; i++) {
-            document.getElementById("list").innerHTML += '<h3 align="center" style="color:#ff3342">'+(i+1)+")"+perm_storage[j[i]].text+ "</h3>";
+            document.getElementById("list").innerHTML += '<h3 align="center" style="color:#ff1242">'+(i+1)+")"+perm_storage[j[i]].text+ "</h3>";
         }
+        j++
+    }
     }
 }
 
