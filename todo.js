@@ -36,7 +36,7 @@ function addNew(value,index){
 }
 function del(index){
   todoItems.splice(index,1);
-  loc.removeItem(index);
+  //loc.removeItem(index);
   document.getElementById("list").innerHTML=""
   todoItems.forEach(addNew);
 
