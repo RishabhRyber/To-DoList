@@ -1,11 +1,11 @@
-#submititem{
+button{
     border-radius: 12px;
     transition-duration: 0.4s;
     font-size: 20px;
   padding: 20px;
   background-color: plum;
 }
-#submititem:hover{
+button:hover{
     background-color: blueviolet;
     color: white;
 }
