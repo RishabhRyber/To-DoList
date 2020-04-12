@@ -39,15 +39,37 @@ function del(index){
   //loc.removeItem(index);
   document.getElementById("list").innerHTML=""
   todoItems.forEach(addNew);
+  loc.removeItem("task");
 
 
 }
+let perm_storage;
+let perm;
 
 function submitl(){
-    
-    document.getElementById("list").innerHTML="<h1>This is the list</h1><br>"+loc;
+    perm=todoItems; 
+    document.getElementById("list").innerHTML="<h1>This is the list</h1><br>";
+    for (var i = 0; i < todoItems.length; i++) {
+        document.getElementById("list").innerHTML += '<h3 align="center" style="color:#ff3342">'+(i+1)+")"+todoItems[i].text+ "</h3>";
+    }
+    //document.getElementsByID("button").style.color='plum';
     s=" ";
-    localStorage.clear();
+    perm_storage.push(perm); 
+    //localStorage.clear();
     todoItems=[];
+   
     
 }
+function check(){
+    if(perm_storage.length===0)
+    document.getElementById("list").innerHTML='<h3 align="center">No lists are added here</h3>';
+    else{
+       
+        let j=0;
+        document.getElementById("list").innerHTML="<h1>List "+(j+1)+"</h1>";
+        for (var i = 0; i < perm_storage[j].length; i++) {
+            document.getElementById("list").innerHTML += '<h3 align="center" style="color:#ff3342">'+(i+1)+")"+perm_storage[j[i]].text+ "</h3>";
+        }
+    }
+}
+

@@ -5,6 +5,13 @@ button{
   padding: 20px;
   background-color: plum;
 }
+#checklist{
+        margin-left: 570px;
+
+}
+#submitlist{
+    margin-left:100px;
+}
 button:hover{
     background-color: blueviolet;
     color: white;
