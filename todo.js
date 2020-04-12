@@ -29,7 +29,7 @@ function add(){
 
 function addNew(value,index){
     //s=s+","+value['text'];
-  document.getElementById("list").innerHTML  +=`<br><hr>`+value['text']+' <input type="button" value="remove" onclick="del('+index+')" id="check">';
+  document.getElementById("list").innerHTML  +=`<hr><h4 align="center">`+value['text']+' <input type="button" value="remove" onclick="del('+index+')" id="check">';
   /* var btn = document.createElement("BUTTON");
   btn.innerHTML = "CLICK ME";
   document.body.appendChild(btn);
@@ -53,7 +53,12 @@ function del(index){
 
 function submitl(){
     perm=todoItems; 
-    document.getElementById("list").innerHTML="<h1>This is the list</h1><br>";
+    if(todoItems.length===0)
+    {
+        document.getElementById("list").innerHTML="<h1>Hurray!You have completed all tasks today</h1><br>"; 
+    }
+    else{
+    document.getElementById("list").innerHTML="<h1>This is the list of tasks to be done</h1><br>";
     for (var i = 0; i < todoItems.length; i++) {
         document.getElementById("list").innerHTML += '<h3 align="center" style="color:#ff3342">'+(i+1)+")"+todoItems[i].text+ "</h3>";
     }
@@ -63,29 +68,9 @@ function submitl(){
     perm_storage.push(perm); 
     localStorage.clear();
     
-   
+}
     
 }
-/*
-function checkL(){
-    if(perm_storage.length===0){
-    document.getElementById("list").innerHTML='<h3 align="center">No lists are added here</h3>';
-    }
-    else{
-       
-        let j=0;
-        
-        while(j<perm_storage.length){
-            document.getElementById("list").innerHTML="<h1>List "+(j+1)+"</h1>";
-        for (var i = 0; i < perm_storage[j].length; i++) {
-            document.getElementById("list").innerHTML += '<h3 align="center" style="color:#ff1242">'+(i+1)+")"+perm_storage[j[i]].text+ "</h3>";
-        }
-        j++
-    }
-    }
-}
-
-*/
 
 k = localStorage.getItem("task").split(",");
 //////console.log(s);
