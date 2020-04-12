@@ -10,15 +10,17 @@ function addTodo(text) {
     todoItems.push(todo);
   
 } 
-let s;
+let perm_storage;
+let perm;
+let s="";
 var loc;
 function add(){
     var x=document.getElementById("todo").value+"\n";
     addTodo(x);
-    s=s+","+x;
+    s = s+","+x;
     localStorage.setItem("task",s)
     loc=localStorage.getItem("task");
-    console.log(s);
+    //////console.log(s);
     // todoItems.push(x);
     document.getElementById("list").innerHTML=""
     todoItems.forEach(addNew);
@@ -28,7 +30,6 @@ function add(){
 function addNew(value,index){
     //s=s+","+value['text'];
   document.getElementById("list").innerHTML  +=`<br><hr>`+value['text']+' <input type="button" value="remove" onclick="del('+index+')" id="check">';
-    loc=localStorage.getItem("task");
   /* var btn = document.createElement("BUTTON");
   btn.innerHTML = "CLICK ME";
   document.body.appendChild(btn);
@@ -37,14 +38,18 @@ function addNew(value,index){
 function del(index){
   todoItems.splice(index,1);
   //loc.removeItem(index);
+  console.log(s);
   document.getElementById("list").innerHTML=""
   todoItems.forEach(addNew);
-  loc.removeItem("task");
-
-
+  s="";
+  loc="";
+  todoItems.forEach(function(value){
+    loc+=value;
+    s+=","+value['text'];
+  });
+  localStorage.setItem("task",s);
 }
-let perm_storage;
-let perm;
+
 
 function submitl(){
     perm=todoItems; 
@@ -61,7 +66,8 @@ function submitl(){
    
     
 }
-function check(){
+/*
+function checkL(){
     if(perm_storage.length===0){
     document.getElementById("list").innerHTML='<h3 align="center">No lists are added here</h3>';
     }
@@ -79,3 +85,15 @@ function check(){
     }
 }
 
+*/
+
+k = localStorage.getItem("task").split(",");
+//////console.log(s);
+k.forEach(function(value){
+    if(value!=""){
+        addTodo(value);
+        s+=","+value;
+        console.log(value);
+    }
+})
+todoItems.forEach(addNew);
